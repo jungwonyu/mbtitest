@@ -1,6 +1,27 @@
+@font-face {
+  font-family: neodgm;
+  src: url(./font/neodgm.woff) format('woff');
+}
+
+body {
+  font-family: neodgm;
+  background-color: #EBEAFA;
+  color: white;
+}
+
 article {
-  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+article>h1 {
+  color: white;
+}
+
+.start-bg {
+  background-color: black;
 }
 
 .question {
@@ -14,5 +35,14 @@ article {
 #img {
   width: 300px;
   height: 300px;
+  margin: 0 auto;
+}
+
+.share {
+  margin: 0 auto;
+}
+
+.kakao_ad {
+  width: 320px;
   margin: 0 auto;
 }
