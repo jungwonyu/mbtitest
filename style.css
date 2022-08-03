@@ -1,33 +1,96 @@
 @font-face {
+  font-family: 'neodgm';
+  src: url('./font/neodgm.woff') format('woff');
+}
+
+* {
   font-family: neodgm;
-  src: url(./font/neodgm.woff) format('woff');
 }
 
 body {
-  font-family: neodgm;
-  background-color: #EBEAFA;
-  color: white;
+  color: #ffffff;
+
+  background-image: url('assets/bg.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 article {
+  display: flex;
+  flex-direction: column;
+}
+
+.kakao_ad {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  background-color: darkslateblue;
+}
+
+
+/* 메인화면 */
+.start {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: flex;
 }
 
-article>h1 {
-  color: white;
+.main {
+  text-align: center;
+
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
-.start-bg {
-  background-color: black;
+.main-img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+
+  border-radius: 100%;
+  border: 1px solid black;
 }
 
+
+
+/* 문제화면 */
 .question {
   display: none;
 }
 
+.wrap {
+  width: 400px;
+  margin: 10px auto 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-button {
+  width: 380px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: white;
+
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+
+/* 결과화면 */
 .result {
   display: none;
 }
@@ -36,13 +99,33 @@ article>h1 {
   width: 300px;
   height: 300px;
   margin: 0 auto;
+
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+.name {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ex {
+  font-size: 16px;
 }
 
 .share {
   margin: 0 auto;
 }
 
-.kakao_ad {
-  width: 320px;
-  margin: 0 auto;
+footer {
+  margin: 40px auto 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer>h6>span {
+  color: red;
 }
