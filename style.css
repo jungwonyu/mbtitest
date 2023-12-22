@@ -4,12 +4,14 @@
   font-family: 'Gowun Dodum', sans-serif;
 }
 
+button {
+  border: none;
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 20px;
 }
 
 article {
@@ -30,7 +32,6 @@ article {
 
   font-size: 18px;
   color: #0a174e;
-  border: none;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -47,12 +48,13 @@ article {
 /* 첫 화면 */
 
 .start {
+  width: max-content;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   gap: 50px;
-  margin-top: 100px;
 }
 
 .title {
@@ -73,6 +75,10 @@ article {
 .question {
   display: none;
   gap: 20px;
+}
+
+.question.on {
+  display: flex;
 }
 
 .progress-bar {
@@ -106,6 +112,12 @@ article {
   padding: 10px;
 }
 
+.buttonWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .select-button {
   width: 100%;
   height: 60px;
@@ -127,8 +139,13 @@ article {
 /* 결과화면 */
 .result {
   display: none;
-
   gap: 10px;
+}
+
+.result.on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrap {
@@ -138,7 +155,6 @@ article {
 #img {
   width: 150px;
   height: 150px;
-  margin: 0 auto;
   border-radius: 100%;
 }
 

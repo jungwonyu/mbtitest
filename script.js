@@ -187,44 +187,48 @@ var result = {
   },
 };
 
+const ABtn = document.querySelector('#A');
+const BBtn = document.querySelector('#B');
+const questionScene = document.querySelector('.question');
+const resultScene = document.querySelector('.result');
+
+ABtn.addEventListener('click', () => {
+  const type = document.querySelector('#type').value;
+  const preValue = document.querySelector(`#${type}`).value;
+  document.querySelector(`#${type}`).value = parseInt(preValue) + 1;
+  next();
+});
+
+BBtn.addEventListener('click', () => {
+  next();
+});
+
 function start() {
-  $('.start').hide(); // 숨기기
-  $('.question').show(); // 보이기
-  next(); // 다음 이동
+  document.querySelector('.start').style.display = 'none';
+  questionScene.classList.add('on');
+  next();
 }
-$('#A').click(function () {
-  // A 버튼 클릭 시
-  var type = $('#type').val(); // 타입 정보를 가져와서
-  var preValue = $('#' + type).val(); // 타입의 값에서
-  $('#' + type).val(parseInt(preValue) + 1); // 값이 1씩 증가 (1을 숫자로 변환 후 add)
-  next(); // 다음 문제 이동
-});
-$('#B').click(function () {
-  // B 버튼 클릭 시
-  next(); // 다음 이동
-});
+
 function next() {
-  // 다음 문제로 넘어가기
   if (num == 13) {
-    // 마지막 문제일 때
-    $('.question').hide();
-    $('.result').show();
-    var mbti = '';
-    $('#EI').val() < 2 ? (mbti += 'I') : (mbti += 'E');
-    $('#SN').val() < 2 ? (mbti += 'N') : (mbti += 'S');
-    $('#TF').val() < 2 ? (mbti += 'F') : (mbti += 'T');
-    $('#JP').val() < 2 ? (mbti += 'P') : (mbti += 'J');
-    $('#img').attr('src', result[mbti]['img']); // 이미지 가져오기
-    $('#personName').html(result[mbti]['personName']); // 인물 이름 가져오기
-    $('#explain').html(result[mbti]['explain']); // 인물 결과 가져오기
+    questionScene.classList.remove('on');
+    resultScene.classList.add('on');
+
+    const mbti = document.querySelector('#EI').value < 2 ? 'I' : 'E';
+    const mbti2 = document.querySelector('#SN').value < 2 ? 'N' : 'S';
+    const mbti3 = document.querySelector('#TF').value < 2 ? 'F' : 'T';
+    const mbti4 = document.querySelector('#JP').value < 2 ? 'P' : 'J';
+    const mbtiResult = mbti + mbti2 + mbti3 + mbti4;
+    document.querySelector('#img').src = result[mbtiResult]['img'];
+    document.querySelector('#personName').innerHTML = result[mbtiResult]['personName'];
+    document.querySelector('#explain').innerHTML = result[mbtiResult]['explain'];
   } else {
-    // 마지막 문제가 아닐 때
-    $('.progress-bar').attr('style', 'width: calc(100/12*' + num + '%)');
-    $('#ing').html(q[num]['qna']);
-    $('#title').html(q[num]['title']);
-    $('#type').val(q[num]['type']);
-    $('#A').html(q[num]['A']);
-    $('#B').html(q[num]['B']);
+    document.querySelector('.progress-bar').style.width = `calc(100/12*${num}%)`;
+    document.querySelector('#ing').innerHTML = q[num]['qna'];
+    document.querySelector('#title').innerHTML = q[num]['title'];
+    document.querySelector('#type').value = q[num]['type'];
+    document.querySelector('#A').innerHTML = q[num]['A'];
+    document.querySelector('#B').innerHTML = q[num]['B'];
     num++;
   }
 }
