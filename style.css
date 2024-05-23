@@ -2,6 +2,7 @@
 
 * {
   font-family: 'Gowun Dodum', sans-serif;
+  overflow: hidden;
 }
 
 button {
@@ -9,30 +10,40 @@ button {
 }
 
 body {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 
 article {
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
 .submit-button {
-  width: 100%;
-  height: 50px;
+  width: 400px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   border-radius: 5px;
   background-color: #f5d042;
 
-  font-size: 18px;
+  font-size: 30px;
   color: #0a174e;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.result.on .submit-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .kakao_ad {
@@ -46,26 +57,26 @@ article {
 }
 
 /* 첫 화면 */
-
 .start {
-  width: max-content;
-  height: 400px;
+  /* width: max-content; */
+  /* height: 400px; */
+  width: 600px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 50px;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 38px;
   font-weight: 700;
   text-align: center;
 }
 
 .main-img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 3 00px;
 
   border-radius: 100%;
 }
@@ -73,12 +84,17 @@ article {
 /* 문제화면 */
 
 .question {
+  /* width: 100%; */
+  width: 600px;
+  height: 100%;
   display: none;
   gap: 20px;
 }
 
 .question.on {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .progress-bar {
@@ -96,20 +112,18 @@ article {
 }
 
 #title {
-  width: 300px;
-  height: 70px;
-  font-size: 16px;
+  width: 100%;
+  height: 100px;
+  font-size: 30px;
   text-align: center;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
   word-break: keep-all;
 
   border: 2px solid #0a174e;
   border-radius: 5px;
-  padding: 10px;
 }
 
 .buttonWrap {
@@ -120,7 +134,7 @@ article {
 
 .select-button {
   width: 100%;
-  height: 60px;
+  height: 100px;
 
   display: flex;
   justify-content: center;
@@ -129,7 +143,7 @@ article {
   border-radius: 5px;
   background-color: #f5d042;
 
-  font-size: 14px;
+  font-size: 26px;
   color: #0a174e;
 
   border: none;
@@ -138,37 +152,44 @@ article {
 
 /* 결과화면 */
 .result {
+  width: 600px;
+  height: 100%;
   display: none;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
 .result.on {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .wrap {
-  max-width: 330px;
+  width: 600px;
+  /* max-width: 330px; */
 }
 
 #img {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   border-radius: 100%;
 }
 
 #personName {
-  font-size: 18px;
+  font-size: 30px;
   text-align: center;
 }
 
 #explain {
-  font-size: 14px;
+  width: 100%;
+  font-size: 20px;
   text-align: center;
   word-break: keep-all;
 }
 
-.share {
+/* .share {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
   margin: 20px auto;
-}
+} */
